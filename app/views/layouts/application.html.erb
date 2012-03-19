@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MathebulaWM200970472IT00237P04</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<section class = "round">
+<%= flash.each do |parm_1, parm_2| %>
+	<div class = "flash">
+		<%= parm_1 %>
+		<%= parm_2 %>
+	</div>	
+<% end %>	
+	<%= yield %>
+	</section>
+</body>
+</html>

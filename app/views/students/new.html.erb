@@ -1,0 +1,49 @@
+<%= form_for(@student) do |f| %>
+  <% if @student.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@student.errors.count, "error") %> prohibited this student from being saved:</h2>
+
+      <ul>
+      <% @student.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><ul>
+    <%= f.text_field :name %>
+  </div>
+  <div class = "field">
+	  <%= f.label :surname %><ul>
+	  <%= f.text_field :surname%>
+  </div>
+  <div class="field">
+    <%= f.label :student_number %><ul>
+    <%= f.text_field :student_number %>
+  </div>
+  <div class="field">
+    <%= f.label :id_no %><ul>
+    <%= f.text_field :id_no%>
+  </div>
+  <div class="field">
+    <%= f.label :email %><ul>
+    <%= f.text_field :email%>
+  </div>
+ 
+  <div class="field">
+	        <%= f.label :password, "Password:" %><ul>
+    		<%= f.password_field :password %>
+  </div>
+  <div class = "field">
+  	<%= f.label :campus %>
+  		<%= f.radio_button :campus, 'Ackland park'%> APK
+  		<%= f.radio_button :campus, 'Ackland park'%> APB
+  		<%= f.radio_button :campus, 'Ackland park'%> SWT
+  		<%= f.radio_button :campus, 'Ackland park'%> DFC
+  <div>
+  </div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

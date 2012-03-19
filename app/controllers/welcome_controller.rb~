@@ -1,0 +1,11 @@
+class WelcomeController < ApplicationController
+   def new
+	  @user = Management.new
+	  if @user.save
+
+	  else
+	     @title = "Registration page"
+   	     render 'new'
+	  end
+	end
+end
